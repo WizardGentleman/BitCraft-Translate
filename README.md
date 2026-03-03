@@ -48,6 +48,14 @@ pyinstaller --noconsole --onefile --name "BitcraftTranslator" --add-data "transl
 
 ## 🤝 Credits
 
-Created by **PoetaBarroco**.
+- Created by **PoetaBarroco**.
+- API provided by [bitjita.com](https://bitjita.com).
+- Special thanks to the Bitcraft community for the API access.
 
-Special thanks to the Bitcraft community for the API access.
+## ⚖️ Disclaimer
+
+**BitCraft Translate** is a third-party fan project. 
+
+- **No Affiliation:** This project is **not** affiliated with, authorized, maintained, sponsored, or endorsed by **Clockwork Labs**, the creators of Bitcraft Online, or any of its affiliates or subsidiaries.
+- **Assets:** Any game-related content, names, or brand assets are the property of their respective owners.
+- **No Liability:** Use this software at your own risk. The developer (PoetaBarroco) is NOT responsible for any issues, bans, or data loss occurring from the use of this application. This tool is provided "as is" without any warranties of any kind.
