@@ -66,7 +66,7 @@ class BitcraftChatApp(ctk.CTk):
         self.logo_label = ctk.CTkLabel(self.sidebar, text="BITCRAFT\nTRANSLATOR", font=ctk.CTkFont(size=20, weight="bold"))
         self.logo_label.pack(pady=20, padx=20)
 
-        # Region Selector
+        # Region Selector (Label updated dynamically)
         self.region_label = ctk.CTkLabel(self.sidebar, text="Filtrar por Região:", font=ctk.CTkFont(size=12, weight="bold"))
         self.region_label.pack(pady=(10, 5), padx=20)
         
@@ -192,12 +192,20 @@ class BitcraftChatApp(ctk.CTk):
         placeholder = f"Escreva em {self.target_lang_name} para traduzir e copiar..."
         self.input_entry.configure(placeholder_text=placeholder)
 
-        # Translate "Created by"
-        def translate_sig():
+        # Translate labels
+        def translate_ui_elements():
+            # Translate signatures
             translated_prefix = self.translator.translate_to_target("Created by")
             self.sig_prefix.configure(text=f"{translated_prefix} ")
+
+            # Translate Sidebar elements
+            translated_region = self.translator.translate_to_target("Filter by Region:")
+            self.region_label.configure(text=translated_region)
+
+            translated_auto = self.translator.translate_to_target("Auto Translation")
+            self.translate_switch.configure(text=translated_auto)
         
-        Thread(target=translate_sig, daemon=True).start()
+        Thread(target=translate_ui_elements, daemon=True).start()
 
     def _translate_and_copy(self):
         text = self.input_entry.get()
